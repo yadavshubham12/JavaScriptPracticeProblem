@@ -1,0 +1,24 @@
+const readline = require("readline").createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+readline.question("Enter 1 for Feet to Inch, 2 for Feet to Meter, 3 for Inch to Feet, or 4 for Meter to Feet: ", (unit) => {
+  readline.question("Enter the length value: ", (value) => {
+    switch (unit) {
+      case "1":
+        console.log(value + " Feet is equal to " + value * 12 + " Inches.");
+        break;
+      case "2":
+        console.log(value + " Feet is equal to " + value / 3.2808 + " Meters.");
+        break;
+      case "3":
+        console.log(value + " Inches is equal to " + value / 12 + " Feet.");
+        break;
+      case "4":
+        console.log(value + " Meters is equal to " + value * 3.2808 + " Feet.");
+        break;
+      default:
+        console.log("Invalid Input");
+        break;
+    }
